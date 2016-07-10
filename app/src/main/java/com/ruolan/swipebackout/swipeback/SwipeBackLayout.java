@@ -36,7 +36,7 @@ import java.util.List;
 
 public class SwipeBackLayout extends FrameLayout {
   /**
-   * Minimum velocity that will be detected as a fling
+   * Minimum velocity(速度) that will be detected as a fling
    */
   private static final int MIN_FLING_VELOCITY = 400; // dips per second
 
@@ -143,6 +143,7 @@ public class SwipeBackLayout extends FrameLayout {
 
   public SwipeBackLayout(Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs);
+    //创建ViewDragHelper辅助类  通过create创建
     mDragHelper = ViewDragHelper.create(this, new ViewDragCallback());
 
     TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SwipeBackLayout, defStyle,
